@@ -7,14 +7,14 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>TestApp</name>
+    <name>douychiApp</name>
 
     <description>
-        A simple Testing application
+        Douychi test app
     </description>
 
-    <author href="http://chigraphicalillustrations.com" email="chiakochima1gman@gmail.com">
-        Chiaka Chima
+    <author href="http://douychi.com" email="info@douychi.com">
+        Chiaka Chima and Samuel Ogu
     </author>
 
 </widget>

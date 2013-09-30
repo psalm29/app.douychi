@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chiaka's Mobile Application">
+<meta name="author" content="Chiaka Chima">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="css/jquerymobilemin.css" />
+<link rel="stylesheet" href="css/DC.css" />
+</head>
+
+<body>
+<div id="loginDialog" data-role="dialog" data-close-btn="none" data-corners="false"  >
+	
+		<div data-role="header" data-theme="a" >
+			<h1>Login</h1>
+		</div>
+
+		<div data-role="content">
+        
+        <div id="form">
+			<form>
+<label id="loginMessege"></label>
+                <label for="text-basic">Seller's name:</label>
+                <input name="sn" required id="name" type="text" placeholder="Seller's name here" value=""><br>
+                <label for="text-basic">Seller's Password:</label>
+                <input name="pwd" required id="pwd" type="password" placeholder="Seller's password here" value="">			
+                <br/>
+                <button id="loginbtn" type="submit" data-role="button" data-mini="true"  data-theme="a" data-shadow="true" data-corners="false">Login</button>
+                
+                
+			</form>
+</div>
+        
+        
+        
+			<!---<form action="#" method="post" id="loginForm"  >
+                <label for="text-basic">Seller's name:</label>
+                <input name="user" required id="name" type="text" placeholder="Seller's name here" value="">
+                <label for="text-basic">Seller's Password:</label>
+                <input name="pwd" required id="pwd" type="password" placeholder="Seller's password here" value="">			
+                <br/>
+                <button id="loginbtn" type="submit" data-role="button" data-mini="true"  data-theme="a" data-shadow="true" data-corners="false">Login</button>
+                
+                onClick="window.open('http://www.douychi.com/user/account.php', '_system');"
+			</form>--->
+			<a href="createaccount.html"  data-mini="true" data-role="button"  data-theme="a" data-shadow="true" data-corners="false">Create Account</a>
+                <a href="#bar" data-role="button"  data-mini="true" data-theme="a" data-shadow="true" data-corners="false">Cancel</a>
+                <div id="login_error_loader" align="center" style="opacity:0.2;margin-top: 11px;display:none;"><img   src="css/images/ajaxloader.gif" width="46" height="46"  alt=""/></div>
+                <p id="login_error" align="center" style="background-color:rgba(255,0,0,1);color:rgba(255,255,255,1); -webkit-border-radius:9px;padding:6px; display:none;">Incorrect Seller's name or password</p>
+                
+		</div>
+	</div>
+<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/jquery.mobile-1.3.2.min.js"></script>
+
+
+</body>
+</html>

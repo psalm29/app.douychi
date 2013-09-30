@@ -1,0 +1,487 @@
+#productCategoryList{
+	margin-left: -15px;
+}
+
+
+/*	
+}
+#productCategoryList li a{
+font-size: 13px;
+color: #000;
+	
+}
+#productCategoryList li a:hover {
+
+
+	
+	
+}
+
+
+*/
+#productCategoryList li{
+
+cursor:pointer;
+
+}
+#wrapper{
+	overflow: visible;
+	
+	position: absolute; 
+	top: 82px; 
+	bottom: 0px;
+	width: 100%;
+	overflow: auto;
+	
+}
+#openPanel{
+background-image: url(images/barsiconssd.png);
+background-repeat: no-repeat;
+background-position: center;
+background-size: 42px;
+width: 43px;
+padding-top: 0px;
+height: 44px;
+top: -2px;
+margin-left: -5px;
+margin-right: -6px;
+-webkit-box-shadow: 16px -13px 23px -6px #000;
+-webkit-border-radius: 0px;
+border: 0px solid rgba(238, 238, 238, 0);
+}
+#openPanel .hover{
+	background-size: 90px;
+}
+#login{
+height: 43px;
+top: -2px;
+margin-right: -6px;
+-webkit-box-shadow: -7px -14px 21px 2px #000;
+-webkit-border-radius: 0px;
+border: 1px solid rgba(238, 238, 238, 0);
+}
+#back{
+height: 43px;
+top: -2px;
+margin-left: -7px;
+margin-right: -6px;
+-webkit-box-shadow: 0px -9px 21px 2px #000;
+-webkit-border-radius: 0px;
+border: 0px solid rgba(238, 238, 238, 0);
+}
+
+#mpa_btn{
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+height: 72px;
+padding: 23px;
+left:-7px;
+margin-right: 5px;
+margin-top: 7px;
+font-size: 14px;
+color: rgb(255, 255, 255);
+background-color: rgba(70, 70, 70, 0.639216);	
+}
+#home_icon_grid{
+	margin-top:0px;
+	z-index:3000
+	
+	}
+	 #loginDialog{
+		  margin-top: 22px;
+min-height: 1281px;
+}
+#prodtupload{
+	margin-top:1px;
+}
+		
+		
+#sellername{
+margin-top: 0px;
+text-align: left;
+font-weight: bolder;
+font-size: 10pt;
+
+}
+		   
+#selleraddress{
+	text-align: right;
+	font-size: 9pt;
+	margin-top: 20px;
+	margin-left:0px;
+	
+}
+.ui-icon-myapp-call {
+	background-image: url(../images/appiconcall.png);
+}
+.ui-icon-myapp-em {
+	background-image:url(../images/appiconemail.png);
+}
+.ui-icon-myapp-sms {
+	background-image: url(../images/appiconsms.png);
+}
+.ui-icon-myapp-camera {
+	background-image:url(../images/appiconcamera.png);
+}
+.ui-icon-myapp-gallery {
+	background-image: url(../images/appicongallery.png);
+}
+
+#sellerpn{
+	
+font-size: 9pt;
+margin-top: 23px;
+font-style: italic;
+}
+
+#pd_grid{
+ margin-top: 24px;	
+}
+#pd_pic{
+	width: 130px;
+	}
+#pd_pdtname{
+	
+}
+#pd_priceNGN{
+color:#ff6600;
+margin-left: 1px;
+font-weight:bold;
+font-size: 14px;	
+}
+#pd_pdtprice{
+		
+		font-size:11pt;
+		
+		margin-right:23px;
+}
+#pdtpricevalue{
+	color: #ff6600;
+font-weight: bold;
+margin-left: -2px;
+font-size: 14px; 
+}
+#pd_pdtavble{
+	font-size:11pt;
+	
+	}
+	
+#pd_pdtavblevalue{
+	margin-left:2px;
+	 font-weight:bold;	
+}
+#pd_pddp{
+	
+font-size:11pt;	
+}
+#pd_pddpvalue{
+ margin-left:2px; 
+ font-weight:bold;	
+	
+}
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+	#Advert{
+		
+		margin-left:0px;
+		
+		}	   
+	#networkconnContent{
+	background-image: -webkit-linear-gradient(top,#5E5E5E,#1B1B1B);
+	background-image: linear-gradient(top,#5E5E5E,#1B1B1B);
+	background-image: -moz-linear-gradient(top,#5E5E5E,#1B1B1B);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#DFDFDF));
+position: absolute;
+left: 0px;
+top: 96px;
+z-index: 30000;
+border-bottom-left-radius: 14px;
+border-bottom-right-radius: 14px;
+border-top-right-radius: 14px;
+border-top-left-radius: 14px;
+-webkit-border-top-left-radius: 14px;
+-webkit-border-top-right-radius: 14px;
+-webkit-border-bottom-right-radius: 14px;
+-webkit-border-bottom-left-radius: 14px;
+background-color: rgba(112, 111, 111, 1);
+margin: 16px;
+padding: 29px;
+box-shadow: 0px 0px 20px 1px #242424;
+-webkit-box-shadow: 0px 0px 20px 1px #242424;
+}
+#connect{
+background-image: -webkit-linear-gradient(top,#5E5E5E,#1B1B1B);
+background-image: linear-gradient(top,#5E5E5E,#1B1B1B);
+background-image: -moz-linear-gradient(top,#5E5E5E,#1B1B1B);
+background-image: -webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#DFDFDF));
+position: absolute;
+left: 0px;
+top: 96px;
+z-index: 30000;
+border-bottom-left-radius: 14px;
+border-bottom-right-radius: 14px;
+border-top-right-radius: 14px;
+border-top-left-radius: 14px;
+-webkit-border-top-left-radius: 14px;
+-webkit-border-top-right-radius: 14px;
+-webkit-border-bottom-right-radius: 14px;
+-webkit-border-bottom-left-radius: 14px;
+background-color: rgba(112, 111, 111, 1);
+margin: -12px;
+margin-left: 60px;
+padding: 30px;
+box-shadow: 0px 0px 20px 1px #242424;
+-webkit-box-shadow: 0px 0px 20px 1px #242424;;
+}
+#retrybtn{
+	color: #fff;
+background-color: rgba(102,102,102,1);
+background-image: -webkit-linear-gradient(top,#666,#222);
+background-image: -linear-gradient(top,#666,#000);
+background-image: -webkit-gradient(linear,left top,left bottom,from(#535252),to(#000000));
+-webkit-border-radius: 0em;
+margin: 0px;
+padding: 6px;
+padding-left: 53px;
+padding-right: 53px;
+cursor: pointer;
+color: #FFF;
+-webkit-box-shadow: 0px 0px 1px 2px #000;
+border-top: 1px solid #A5A5A5;
+	}
+#retrybtn a:hover {
+/*
+color: #fff;
+background-color: rgba(102,102,102,1);
+background-image: -webkit-linear-gradient(top,#363636,#747474);
+background-image: -linear-gradient(top,#666,#000);
+-webkit-border-radius: 1em;
+margin: 0px;
+padding: 7px;
+-webkit-box-shadow: 0px 0px 6px 1px #000;
+border-top: 1px solid #A8A8A8;
+*/
+background-image: -webkit-gradient(linear,left top,left bottom,from(#ffe155),to(#ffefaa));
+}
+	   
+/*----------------Resposive nature------------------*/
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+	.ui-icon-myapp-email {
+		background-image:url(../images/appiconcallhighres.png);
+		background-size: 18px 18px;
+	}
+	...more HD icon rules go here...
+}
+
+
+  @media (min-height: 1230px) and (max-width: 2059px)  {
+	  
+	  
+	  
+	  #networkconnContent{
+		  position: fixed;
+		left: 12px;
+		width: 85%;
+		right: 0px;
+		height: 241px;
+		top: 476px;
+	  }
+	  #netwcC_title{
+		   color: #CCCCCC;
+			font-size: 24pt;
+	  }
+	  #netwcC_content{
+		  color: #CCCCCC;
+			font-size: 17pt;
+	  }
+	  
+	  
+	  
+	   #connect{
+			left: 0px;
+width: 76%;
+right: 0px;
+top: 476px;
+	}
+	#retrytxt{
+		color: #fff;
+font-size: 18pt;
+		}
+	#retrybtn{
+	padding-left: 173px;
+	padding-right: 173px;
+	
+	}
+	
+	
+	
+	   #Advert{
+		
+		margin-left:230px;
+		
+		}
+	   
+	   
+	    #loginDialog{
+		   
+		   margin-top: 332px;
+		   }
+	   #prodtupload{
+	
+}
+	   
+	   #home_icon_grid{
+	margin-top:294px;
+	
+	
+	}
+	#pd_grid{
+ margin-top: 110px;	
+}
+	
+	#pd_pic{
+	width: 300px;
+	}
+	
+	#pd_pdtname{
+	font-size: 20pt;
+}
+#pd_pdtprice{
+		
+	font-size: 15pt;
+margin-right: 23px;
+}
+#pd_priceNGN{
+	color: #ff6600;
+margin-left: 6px;
+font-weight: bold;
+font-size: 23px;
+}
+#pdtpricevalue{
+	color: #ff6600;
+font-weight: bold;
+margin-left: -2px;
+font-size: 23px;
+}
+#pd_pdtavble{
+	font-size: 15pt
+	
+	}
+	
+#pd_pdtavblevalue{
+	margin-left:2px;
+	 font-weight:bold;	
+}
+#pd_pddp{
+	
+font-size: 15pt;
+}
+#pd_pddpvalue{
+ margin-left:2px; 
+ font-weight:bold;	
+	
+}
+	
+	
+	
+	
+	
+	   	#mpa_btn{
+	
+	
+	left: 103px;
+	
+}
+
+	   }
+@media screen and (min-width: 300px)and(max-height: 400px){
+		#Advert{
+		
+		margin-left: 19px;
+		
+		}
+	
+	}
+
+@media (min-width: 700px) and (max-height: 1280px){
+	#Advert{
+		
+		margin-left: 242px;
+		
+		}
+	
+	#mpa_btn{
+	
+	left: 103px;
+	
+}
+		
+
+	@media (min-width: 380px) and (max-width: 480px){
+		#Advert{
+		
+		margin-left: 9px;
+		
+		}
+	
+	#mpa_btn{
+	
+	
+	left: 9px;
+	
+}
+
+	@media screen and (min-width: 480px) and (max-width: 800px){
+	   #Advert{
+		
+		margin-left: 81px;
+		
+		}
+	
+	#mpa_btn{
+	
+	
+	left: 36px;
+	
+}
+
+   @media all and (min-height: 600px) and (max-height: 1298px){
+	  
+	   #Advert{
+		
+		margin-left: 81px;
+		
+		}
+	    #home_icon_grid{
+	margin-top: 100px;
+	
+	
+	}
+	   
+	   	#mpa_btn{
+	
+	
+	left: 36px;
+	
+}
+
+	   }  
+	@media screen and (min-height: 380px) and (max-height: 480px){
+		#Advert{
+		
+		margin-left: 19px;
+		
+		}
+	
+	}
+	

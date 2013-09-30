@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chiaka's Mobile Application">
+<meta name="author" content="Chiaka Chima">
+<title>Untitled Document</title>
+</head>
+
+<body onLoad="onload()">
+<div data-role="page" id="cat_page" >
+	
+		<div data-role="header" data-theme="a" data-position="fixed" >
+        	<a id="back" href="login.html" data-rel="dialog" data-close-btn="none"  data-transition="pop">Back</a>
+			<h1>New Account</h1>
+  </div>
+
+		<div id="message"></div>
+		<div  data-role="content" id="formAccount" >
+		  <form>
+            <label for="Seller's name">Seller's name:</label>
+            <input name="name" required id="name" type="text" data-clear-btn="true" placeholder="Seller's name here">
+			<label for="Email address">Email address:</label>
+            <input name="email" required  id="email" type="email" data-clear-btn="true" placeholder="Your email here">			
+            <label for="Login password">Login password:</label>
+            <input name="pwd" required id="pwd" type="password" data-clear-btn="true" autocomplete="off" placeholder="Seller's password here">
+			<label for="Verify password">Verify password:</label>
+            <input name="pwd1" required id="pwd1" type="password" data-clear-btn="true" autocomplete="off" placeholder="Verify password here" >	
+            <label for="Seller's name">Phone number:</label>
+            <input name="phone" required id="phone" type="number" data-clear-btn="true" placeholder="Phone number here">		
+              <label for="textarea">Shop address:</label>
+           <textarea name="address" required id="address" rows="8" cols="8"></textarea>
+
+            <div align="center">	
+            <img  style="display:none;  margin-top:10px; width:100px;margin-top: 10px;-webkit-box-shadow: 0px 2px 4px 2px #000;" id="image" src="" />
+			</div>
+			
+            <div data-corners="false" align="center" style="z-index:1;margin-top:13px" data-role="controlgroup"  data-type="horizontal">
+    
+             <a data-role="button" data-mini="true"  data-icon="myapp-gallery" data-theme="a" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">Select Company logo</a>
+              
+
+   
+</div>
+			
+            <br/>
+			<button type="submit" data-role="button" data-mini="true"  data-theme="a" data-shadow="true" data-corners="false">Create</button>
+           
+			</form>
+                
+		</div>
+</div>
+
+
+
+</body>
+</html>

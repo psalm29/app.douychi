@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chiaka's Mobile Application">
+<meta name="author" content="Chiaka Chima">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="css/jquerymobilemin.css" />
+<link rel="stylesheet" href="css/DC.css" />
+</head>
+
+<body>
+<div id="prodtupload" data-role="page"  data-corners="false" >
+	
+		<div data-role="header" data-theme="a"  data-position="fixed">
+        <a id="back" href="sellerpage.html" data-close-btn="none"  data-transition="pop">Back</a>
+			<h1>Product Upload Panel</h1>
+		</div>
+
+		<div id="message"></div>
+		<div data-role="content" id="form">
+
+			<form>
+           
+            <label for="text-basic">Product name:</label>
+            <input name="name" id="name" type="text" data-clear-btn="true" placeholder="Product name here">
+            
+        
+            <fieldset data-role="controlgroup" data-mini="true">
+                <legend>Product category:</legend>
+                <input name="category" id="radio-choice-v-6a" type="radio" checked="checked" value="Mobile phones">
+                <label for="radio-choice-v-6a">Mobile phones</label>
+                <input name="category" id="radio-choice-v-6b" type="radio" value="Smart phones">
+                <label for="radio-choice-v-6b">Smart phones</label>
+                <input name="category"   id="radio-choice-v-6c" type="radio" value="Tablets">
+                <label for="radio-choice-v-6c">Tablets</label>
+                 <input name="category"  id="radio-choice-v-6d" type="radio" value="Laptops">
+                <label for="radio-choice-v-6d">Destops/Laptops</label>
+                 <input name="category"  id="radio-choice-v-6e" type="radio" value="Mobile accessories">
+                <label for="radio-choice-v-6e">Mobile accessories</label>
+            </fieldset>
+        
+            
+            
+            <label for="text-basic">Product Price[NGN]:</label>
+            <input name="amount" id="amount" type="number" data-clear-btn="true" placeholder="Product price here">	
+            <label for="text-basic">Product description:</label>
+			<textarea id="description" name="description"></textarea>
+            
+            
+            
+            
+            
+            <div align="center">	
+            <img  style="display:none;  margin-top:10px; width:100px;margin-top: 10px;-webkit-box-shadow: 0px 2px 4px 2px #000;" id="image" src="" />
+			<img  style="display:none;  margin-top:10px;margin-left:10px; width:100px;margin-top: 10px;-webkit-box-shadow: 0px 2px 4px 2px #000;" id="image2" src="" /></div>
+            
+          
+            <div data-corners="false" align="center" style="z-index:1;margin-top:13px" data-role="controlgroup"  data-type="horizontal">
+    <!--<a   data-role="button"   data-icon="myapp-camera" data-theme="a">Take photo</a>---->
+    		<a data-role="button" data-mini="true"   data-icon="myapp-camera" data-theme="a" onclick="capturePhoto();">Capture Photo</a>
+             <a data-role="button" data-mini="true"  data-icon="myapp-gallery" data-theme="a" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Library</a>
+              
+
+   
+</div>
+
+            <div id="imageMessage" style="text-align:center;background-color:rgba(255,0,0,1);color:rgba(255,255,255,1); -webkit-border-radius:9px;padding:6px;display:none">Image required</div>
+            <br/>
+			<button type="submit" data-role="button" data-mini="true"    data-theme="a" data-shadow="true" data-corners="false">Upload</button>
+			
+			</form>
+                
+		</div>
+	</div>
+
+	<script src="js/jquerymin.js"></script>
+	<script src="js/jquerymobilemin.js"></script>
+
+</body>
+</html>

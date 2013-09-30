@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Testing Mobile Application</title>
+<meta name="description" content="Chiaka's Mobile Application">
+<meta name="author" content="Chiaka Chima">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" href="css/jquerymobilemin.css" />
+<link rel="stylesheet" href="css/DC.css" />
+
+<!--<link rel="stylesheet" href="css/jquery.mobile.theme-1.3.2.min.css" />-->
+
+</head>
+<body onload="onLoad()">
+<div id="networkconn_overlay" style="background-color: rgba(0, 0, 0, 0.6);
+width: 100%;
+height: 100%;
+z-index: 20000;
+position: fixed;display:none;">
+                <div id="networkconnContent" style="display:none;position:fixed;" >
+                    
+                              
+                                        <h3 id="netwcC_title"  style="color:#000" >No Network</h3>
+                                    <hr/>
+                                
+                            <div data-role="content">
+                                    <h5 id="netwcC_content" style="color: #000; text-transform: inherit;"> There is no network connection available.<br/> 
+                                    This App requires an internet connection to function.<br/>
+                                    Please Check your connection settings. </h5>
+                                            
+                            </div>
+                       
+                </div>
+                <div id="connect" style="display:none; position:fixed;" >
+                    
+                              
+                                        <h3 style="color:#000" >Connection error</h3>
+                                    <hr/>
+                                
+                            <div style="text-align: center;" data-role="content">
+                                   
+                                    
+                                    <br/>
+                                    <h5 id="retrytxt" style="color:#000;font-size: 14pt;">
+                                                </h5><br/>
+                                                <a id="retrybtn" align="center" style="text-decoration:none; display:none;">Retry</a>
+                            </div>
+                       
+                </div>
+
+
+</div>
+<!-------------------------------------------Home Page-------------------------------->
+<div data-role="page" id="foo" style="background-image:url(images/DCHomeBG.png);background-size: 1603px;"  >
+
+
+<div data-role="header" data-position="fixed" >
+                        		<h2 style="font-size:14px">Choose Category</h2>
+  </div>
+	<div data-role="content" >
+    
+            <!---<img src="images/DCHomeBG.png" width="1280" height="1290" style="position:absolute; top:0px; left:0px; ">--->
+                        
+                        <div id="home_icon_grid"  class="ui-grid-a" >
+                            <div class="ui-block-a">
+                                                        <div id="mp_btn" class="ui-bar ui-bar-f" style="border-radius: 10px;
+                                    height: 72px;
+                                    padding: 20px;
+                                    margin-right: 5px;z-index:0;font-size:14px;color: #fff;
+background-color: rgba(70, 70, 70, 0.64); " align="center">
+
+                                <img style="margin-top: -38px;
+                                margin-left: -5px;margin-bottom: -15px;" src="images/DCproductCtgMP.png" width="111">
+                                <p>
+								Mobile phones
+                                </p>
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="ui-block-b">
+                                                        <div id="sp_btn" class="ui-bar ui-bar-f" style="border-radius: 10px;
+                                    height: 72px;
+                                    padding: 20px;
+                                    margin-right: 5px;font-size:14px;color: #fff;
+background-color: rgba(70, 70, 70, 0.64);" align="center">
+
+								<img style="margin-top: -34px; margin-left: -5px; margin-bottom: -15px;" src="images/DCproductCtgSP.png" width="109">
+                                <p>Smart phones</p>
+                                
+                                </div>
+                            </div>
+                           
+                    <div class="ui-block-a">
+                                                        <div id="ta_btn" class="ui-bar ui-bar-f" style="border-radius: 10px;
+                                    height: 72px;
+                                    padding: 20px;
+                                    margin-right: 5px;
+                                    margin-top: 7px;font-size:14px;color: #fff;
+background-color: rgba(70, 70, 70, 0.64);" align="center">
+
+								<img style="margin-top: -34px; margin-left: -5px; margin-bottom: -15px;" src="images/DCproductCtgTB.png" width="111">
+
+								<p>Tablets</p>
+                                
+                                </div>
+                    </div>
+                    <div class="ui-block-b">
+                                                        <div id="pc_btn" class="ui-bar ui-bar-f" style="border-radius: 10px;
+                                    height: 72px;
+                                    padding: 20px;
+                                    margin-right: 5px;
+                                    margin-top: 7px;font-size:14px;color: #fff;
+background-color: rgba(70, 70, 70, 0.64);" align="center">
+								
+                                <img  style="margin-top: -34px; margin-left: -5px; margin-bottom: -15px;" src="images/DCproductCtgPC.png" width="111">
+                                
+								<p>PC</p>
+                                
+                                
+                                </div>
+                    </div>
+                    <div style="margin-left:80px"  class="ui-block-a">
+                                                            <div id="mpa_btn" class="ui-bar ui-bar-f"  align="center">
+
+								<img style="margin-top: -21px; margin-left: -6px; margin-bottom: -25px;" src="images/DCproductCtgMPA.png" width="90">
+								<p>Mobile accessories</p>
+                                
+                                
+                                </div>
+                    
+                    
+                    
+                    </div>
+                
+                
+                
+                        </div><!-- /grid-a -->
+
+             
+        
+	</div>
+   
+		<div data-role="footer" data-position="fixed" data-id="myfooter" > 
+    	<div><a  id="loginhomebtn" href="loginhome.html"   data-role="button"  data-mini="true" data-theme="e" data-corners="false"  style="margin: 6px;text-decoration:none; color:rgba(0,0,0,1);">Login</a></div>
+    </div><!-- /footer -->
+</div>
+<!-------------------------------------------Home Page-------------------------------->
+
+
+
+<!----------------------------------Product page-------------------------------------------------->
+<div data-role="page" id="bar" data-position="fixed">
+<!-- ----------------------------------panel ------------------------->
+<div data-role="panel"  style="position:fixed;" data-display="reveal" id="mypanel" data-theme="b">
+
+            <div align="center"  style="background-color: #fff;
+                        top: 0px;
+                        width: 114%;
+                        height: 43px;
+                        margin: -15px;
+                        margin-left: -18px;
+                        -webkit-box-shadow: 0px 0px 14px 2px #000;">
+                        
+                        
+                        <a href="about.html"><img style="cursor:pointer;" src="images/logoXXsmall.png" width="105" ></a>
+            </div>
+           
+            <!----panel content-------->
+             <div style="margin-top:26px;">
+             
+                    <h3  align="center">Product Category</h3>
+                    <div style="margin-top: -11px;border-bottom: 1px solid #757474;
+-webkit-box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.84);">
+                    </div>
+                    <ul id="productCategoryList" data-theme="f"  data-role="listview">
+                        <li id="mp" data-rel="close"><img  src="images/DCproductCtgMP.png" width="70"><h6 style="font-size: 14px;margin-left: -13px; margin-top: 18px;">Mobile Phones</h6></li>
+                        <li id="sp" data-rel="close"><img  src="images/DCproductCtgSP.png" width="80"><h6 style="font-size: 14px;margin-left: -13px; margin-top: 18px;">Smart Phones</h6></li>
+                        <li id="ta" data-rel="close"><img  src="images/DCproductCtgTB.png" width="80"><h6 style="font-size: 14px;margin-left: -13px; margin-top: 18px;">Tablets</h6></li>
+                        <li id="pc" data-rel="close"><img  src="images/DCproductCtgPC.png" width="80"><h6 style="font-size: 14px;margin-left: -13px; margin-top: 18px;">PC</h6></li>
+                        <li id="mpa" data-rel="close"><img   src="images/DCproductCtgMPA.png" width="76"><h6 style="font-size: 14px;margin-left: -13px; margin-top: 18px;">Mobile accessories</h6></li>
+                        
+`                    </ul>
+ </div>
+ 
+            <!----panel content-------->
+</div>
+ <div id="pd_filterpanel" style="position:fixed;" data-role="panel" data-display="reveal" data-position="right" data-theme="b" >
+        	<div id="advanceSearch">
+            <form>	
+   <label for="number-1">MIN(NGN):</label>
+     <input name="number-1" id="min" type="number" placeholder="MIN here...." value="" data-clear-btn="true">
+     <label for="number-2">MAX(NGN)</label>
+     <input name="number-2" id="max" type="number" placeholder="MAX here...." value="" data-clear-btn="true">
+		
+       <h1><button data-rel="close" data-theme="a" data-mini="true" data-corners="false" data-role="button" type="submit" >Filter</button></h1>
+        </form> 
+        	</div>
+  </div>	
+
+<!------------------------------- panel ------------------------------------------->
+
+
+
+
+<!---===================================Product listing=========================-------------->
+
+<div data-role="header" data-position="fixed" style="position: fixed;">
+    	<a id="openPanel" href="#mypanel">&nbsp;</a>
+	  <h1 id="pdcatgyactivename">Product list</h1>
+      	<a id="login" href="login.html" data-rel="dialog" data-close-btn="none"  data-transition="pop">Login</a>
+  </div>
+	
+	<div data-role="content"><!-- -----------------------------content------------------------ -->
+    
+     <!--<ul id="search" data-filter="true"      data-role="listview"   >
+                         
+                            
+                            
+      </ul>--->
+    <ul id="employeeList" data-role="listview" data-filter-placeholder="Search Product...." data-filter="true"></ul>
+    
+    
+    
+    
+    
+    
+   
+    
+    
+       
+  </div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" data-id="myfooter" style="position: fixed;" > 
+    	
+ 		       <div><a style="margin: 6px;" href="about.html" data-theme="e" data-mini="true" data-corners="false" data-transition="pop" data-role="button" >&copy; 2013 douychi.com</a></div>
+
+
+		
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+<!----------------------------------Product page-------------------------------------------------->
+
+
+
+<!----------------------------------Product Details----------------------------------------------->
+
+
+
+<!----------------------------------Product Details----------------------------------------------->
+<!--<script src="js/cordova.js"></script>-->
+<script src="js/phonegap.js"></script>
+<script src="js/jquerymin.js"></script>
+<script src="js/jquerymobilemin.js"></script>
+   <!-- <script src="js/iscroll.js"></script>-->
+<script src="js/main.js"></script>
+
+<script src="js/takephoto.js"></script>
+
+
+	
+</body>
+</html>

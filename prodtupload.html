@@ -24,7 +24,7 @@
 			<form>
            
             <label for="text-basic">Product name:</label>
-            <input name="name" id="name" type="text" data-clear-btn="true" placeholder="Product name here">
+            <input name="name" id="name" required type="text" data-clear-btn="true" placeholder="Product name here">
             
         
             <fieldset data-role="controlgroup" data-mini="true">
@@ -44,9 +44,9 @@
             
             
             <label for="text-basic">Product Price[NGN]:</label>
-            <input name="amount" id="amount" type="number" data-clear-btn="true" placeholder="Product price here">	
+            <input required name="amount" id="amount" type="number" data-clear-btn="true" placeholder="Product price here">	
             <label for="text-basic">Product description:</label>
-			<textarea id="description" name="description"></textarea>
+			<textarea required id="description" name="description"></textarea>
             
             
             
@@ -59,8 +59,8 @@
           
             <div data-corners="false" align="center" style="z-index:1;margin-top:13px" data-role="controlgroup"  data-type="horizontal">
     <!--<a   data-role="button"   data-icon="myapp-camera" data-theme="a">Take photo</a>---->
-    		<a data-role="button" data-mini="true"   data-icon="myapp-camera" data-theme="a" onclick="capturePhoto();">Capture Photo</a>
-             <a data-role="button" data-mini="true"  data-icon="myapp-gallery" data-theme="a" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Library</a>
+    		<a data-role="button" data-mini="true"   data-icon="myapp-camera" data-theme="a" id="capturePhoto">Capture Photo</a>
+             <a data-role="button" data-mini="true"  data-icon="myapp-gallery" data-theme="a" id="getPhoto" >From Library</a>
               
 
    
@@ -77,6 +77,99 @@
 
 	<script src="js/jquerymin.js"></script>
 	<script src="js/jquerymobilemin.js"></script>
+	<script>
+	$(document).ready(function() {
+		var pictureSource;   // picture source
+    var destinationType; // sets the format of returned value
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready",onDeviceReady,false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        pictureSource=navigator.camera.PictureSourceType;
+        destinationType=navigator.camera.DestinationType;
+    }
+	
+	// Called when a photo is successfully retrieved
+    //
+    function onPhotoDataSuccess(imageData) {
+      // Uncomment to view the base64-encoded image data
+      // console.log(imageData);
+
+      // Get image handle
+      //
+      var image = document.getElementById('image');
+
+      // Unhide image elements
+      //
+      image.style.display = 'block';
+
+      // Show the captured photo
+      // The inline CSS rules are used to resize the image
+      //
+      image.src = "data:image/jpeg;base64," + imageData;
+    }
+	
+	// Called when a photo is successfully retrieved from file...
+    //
+    function onPhotoURISuccess(imageURI) {
+      // Uncomment to view the image file URI
+      // console.log(imageURI);
+
+      // Get image handle
+      //
+      var largeImage = document.getElementById('image2');
+
+      // Unhide image elements
+      //
+      largeImage.style.display = 'block';
+
+      // Show the captured photo
+      // The inline CSS rules are used to resize the image
+      //
+      largeImage.src = imageURI;
+    }
+	
+		$('#capturePhoto').click(function(){
+			// Take picture using device camera and retrieve image as base64-encoded string
+			navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, allowEdit: true,
+        destinationType: destinationType.DATA_URL });
+		});
+		
+		$('#getPhoto').click(function(source){
+			// Retrieve image file location from specified source
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: destinationType.FILE_URI,
+        sourceType: source });
+		});
+		
+		//calls if something goes wrong
+		function onFail(message) {
+      alert('Failed because: ' + message);
+    }
+		
+		//sending of account variables
+	$('#formAccount form').submit(function(){
+			$('#message').load('http://douychi.com/services/account_server.php', {'name': $('#name').val(), 'email': $('#email').val(), 'pwd': $('#pwd').val(), 'pwd1': $('#pwd1').val(), 'phone': $('#phone').val(), 'address': $('#address').val(), 'image': $('#image').attr('src')});            
+   return false;
+		});
+		
+		//sending of product upload variables
+		$('#form form').submit(function(){
+			if($('#image').attr('src') == ''){
+				$('#message').load('http://douychi.com/services/addproduct_server.php', {'name': $('#name').val(), 'category': $('input:radio[name=category]:checked').val(), 'amount': $('#amount').val(), 'seller': sellername, 'description': $('#description').val(), 'image': $('#image').attr('src'), 'image1': $('#image2').attr('src')});            
+   return false;
+			}else {
+				$('#imageMessage').show().fadeIn();
+			}
+			
+   
+		});
+	});
+	</script>
 
 </body>
 </html>

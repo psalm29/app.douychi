@@ -52,20 +52,27 @@
             
             
             
-            <div align="center">	
-            <img  style="display:none;  margin-top:10px; width:100px;margin-top: 10px;-webkit-box-shadow: 0px 2px 4px 2px #000;" id="image" src="" />
-			<img  style="display:none;  margin-top:10px;margin-left:10px; width:100px;margin-top: 10px;-webkit-box-shadow: 0px 2px 4px 2px #000;" id="image2" src="" /></div>
+            
             
           
             <div data-corners="false" align="center" style="z-index:1;margin-top:13px" data-role="controlgroup"  data-type="horizontal">
     <!--<a   data-role="button"   data-icon="myapp-camera" data-theme="a">Take photo</a>---->
-    		<a data-role="button" data-mini="true"   data-icon="myapp-camera" data-theme="a" id="capturePhoto">Capture Photo</a>
-             <a data-role="button" data-mini="true"  data-icon="myapp-gallery" data-theme="a" id="getPhoto" >From Library</a>
-              
+    		<style>
+  #image {
+    height: 75px;
+    border: 1px solid #F90;
+	-webkit-border-radius: 5px;
+    margin: 10px 5px 0 0;
+  }
+</style>
+           <input accept="image/*" type="file" id="files" name="files[]"  />
+<output id="list"><span id="span"></span></output>   
 
    
 </div>
-
+<div align="center">	
+			</div>
+			
             <div id="imageMessage" style="text-align:center;background-color:rgba(255,0,0,1);color:rgba(255,255,255,1); -webkit-border-radius:9px;padding:6px;display:none">Image required</div>
             <br/>
 			<button type="submit" data-role="button" data-mini="true"    data-theme="a" data-shadow="true" data-corners="false">Upload</button>
@@ -78,79 +85,37 @@
 	<script src="js/jquerymin.js"></script>
 	<script src="js/jquerymobilemin.js"></script>
 	<script>
-	$(document).ready(function() {
-		var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value
+	  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
 
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready",onDeviceReady,false);
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
 
-    // device APIs are available
-    //
-    function onDeviceReady() {
-        pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+          var span = document.getElementById('span');
+          span.innerHTML = ['<img id="image" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>'].join('');
+          
+        };
+      })(f);
+
+      // Read in the image file as a data URL.
+       reader.readAsDataURL(f);
     }
-	
-	// Called when a photo is successfully retrieved
-    //
-    function onPhotoDataSuccess(imageData) {
-      // Uncomment to view the base64-encoded image data
-      // console.log(imageData);
+  }
 
-      // Get image handle
-      //
-      var image = document.getElementById('image');
-
-      // Unhide image elements
-      //
-      image.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      image.src = "data:image/jpeg;base64," + imageData;
-    }
-	
-	// Called when a photo is successfully retrieved from file...
-    //
-    function onPhotoURISuccess(imageURI) {
-      // Uncomment to view the image file URI
-      // console.log(imageURI);
-
-      // Get image handle
-      //
-      var largeImage = document.getElementById('image2');
-
-      // Unhide image elements
-      //
-      largeImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      largeImage.src = imageURI;
-    }
-	
-		$('#capturePhoto').click(function(){
-			// Take picture using device camera and retrieve image as base64-encoded string
-			navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, allowEdit: true,
-        destinationType: destinationType.DATA_URL });
-		});
-		
-		$('#getPhoto').click(function(source){
-			// Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-        destinationType: destinationType.FILE_URI,
-        sourceType: source });
-		});
-		
-		//calls if something goes wrong
-		function onFail(message) {
-      alert('Failed because: ' + message);
-    }
-		
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+  
 		//sending of account variables
 	$('#formAccount form').submit(function(){
 			$('#message').load('http://douychi.com/services/account_server.php', {'name': $('#name').val(), 'email': $('#email').val(), 'pwd': $('#pwd').val(), 'pwd1': $('#pwd1').val(), 'phone': $('#phone').val(), 'address': $('#address').val(), 'image': $('#image').attr('src')});            
@@ -160,15 +125,14 @@
 		//sending of product upload variables
 		$('#form form').submit(function(){
 			if($('#image').attr('src') == ''){
-				$('#message').load('http://douychi.com/services/addproduct_server.php', {'name': $('#name').val(), 'category': $('input:radio[name=category]:checked').val(), 'amount': $('#amount').val(), 'seller': sellername, 'description': $('#description').val(), 'image': $('#image').attr('src'), 'image1': $('#image2').attr('src')});            
+				$('#message').load('http://douychi.com/services/addproduct_server.php', {'name': $('#name').val(), 'category': $('input:radio[name=category]:checked').val(), 'amount': $('#amount').val(), 'seller': sellername, 'description': $('#description').val(), 'image': $('#image').attr('src')});            
    return false;
 			}else {
-				$('#imageMessage').show().fadeIn();
+				$('#imageMessage').css('display', 'block');
 			}
 			
    
 		});
-	});
 	</script>
 
 </body>

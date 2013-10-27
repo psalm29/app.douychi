@@ -38,8 +38,16 @@
 			
             <div data-corners="false" align="center" style="z-index:1;margin-top:13px" data-role="controlgroup"  data-type="horizontal">
     
-             
-              
+   <style>
+#btn{
+	background-color: #333; 
+	padding: 7px;
+	color: #FFF;
+	border-radius: 5px;
+	cursor: pointer;
+}
+</style>          
+             <span id="btn">Upload Image</span> 
 
    
 </div>
@@ -54,36 +62,20 @@
 	<script src="js/jquerymin.js"></script>
 	<script src="js/jquerymobilemin.js"></script>
 	<script>
-	  function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
-
-    // Loop through the FileList and render image files as thumbnails.
-    for (var i = 0, f; f = files[i]; i++) {
-
-      // Only process image files.
-      if (!f.type.match('image.*')) {
-        continue;
-      }
-
-      var reader = new FileReader();
-
-      // Closure to capture the file information.
-      reader.onload = (function(theFile) {
-        return function(e) {
-          // Render thumbnail.
-          var span = document.getElementById('span');
-          span.innerHTML = ['<img id="image" src="', e.target.result,
-                            '" title="', escape(theFile.name), '"/>'].join('');
-          
-        };
-      })(f);
-
-      // Read in the image file as a data URL.
-       reader.readAsDataURL(f);
-    }
-  }
-
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+	  $('#btn').bind('tap', function(){
+	var options = {sourceType:Camera.PictureSourceType.PHOTOLIBRARY, destinationType: Camera.DestinationType.FILE_URL};
+	navigator.camera.getPicture(onCameraSuccess, onError, options);
+	
+	function onError(message) {
+	alert (message);	
+	}
+	
+	function onCameraSuccess(imageURL) {
+		$('#image').attr('src', imageURL);
+		$('#image').css('display', 'block');
+	}
+	
+});
   
 		//sending of account variables
 	$('#formAccount form').submit(function(){
@@ -91,17 +83,7 @@
    return false;
 		});
 		
-		//sending of product upload variables
-		$('#form form').submit(function(){
-			if($('#image').attr('src') == ''){
-				$('#message').load('http://douychi.com/services/addproduct_server.php', {'name': $('#name').val(), 'category': $('input:radio[name=category]:checked').val(), 'amount': $('#amount').val(), 'seller': sellername, 'description': $('#description').val(), 'image': $('#image').attr('src')});            
-   return false;
-			}else {
-				$('#imageMessage').show();
-			}
-			
-   
-		});
+		
 	</script>
 
 

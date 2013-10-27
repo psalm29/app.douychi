@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chiaka's Mobile Application">
+<meta name="author" content="Chiaka Chima">
+<title>Untitled Document</title>
+</head>
+
+<body onLoad="onload()">
+<div data-role="page" id="cat_page" >
+	
+		<div data-role="header" data-theme="a" data-position="fixed" >
+        	<a id="back" href="login_home.html" data-rel="dialog" data-close-btn="none"  data-transition="pop">Back</a>
+			<h1>New Account</h1>
+  </div>
+
+		<div  data-role="content" >
+		  <form action="login.html" method="post" >
+            <label for="Seller's name">Seller's name:</label>
+            <input name="Seller's name" required id="text-basic" type="text" data-clear-btn="true" placeholder="Seller's name here" value="">
+			<label for="Email address">Email address:</label>
+            <input name="Email address" required id="email-1" type="email" data-clear-btn="true" placeholder="Your email here" value="">			
+            <label for="Login password">Login password:</label>
+            <input name="Login password" required id="password-1" type="password" data-clear-btn="true" autocomplete="off" placeholder="Seller's password here" value="">
+			<label for="Verify password">Verify password:</label>
+            <input name="Verify password" required id="password-1" type="password" data-clear-btn="true" autocomplete="off" placeholder="Verify password here" value="">	
+            <label for="Seller's name">Phone number:</label>
+            <input name="Seller's name" required id="text-basic" type="text" data-clear-btn="true" placeholder="Phone number here" value="">		
+              <label for="textarea">Shop address:</label>
+           <textarea name="textarea" required id="textarea" rows="8" cols="8"></textarea>
+
+            <label for="Company logo">Company logo</label>
+            <input name="Company logo" required id="file" type="file" placeholder="Seller's name here" value="">
+			
+            <br/>
+			<button type="submit" data-role="button" data-mini="true"  data-theme="a" data-shadow="true" data-corners="false">Create</button>
+           
+			</form>
+                
+		</div>
+</div>
+
+
+
+</body>
+</html>

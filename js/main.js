@@ -290,7 +290,34 @@ $('#sellerpage').live('pageshow', function(event) {
 	document.addEventListener("backbutton", onBackKeyDown, false);
 });	
 			
+/////////////////////////create account page live event
+
+$('#cat_page').live('pageshow', function(event) {
+		$('#btn').('tap', function(){
+	var options = {sourceType:Camera.PictureSourceType.PHOTOLIBRARY, destinationType: Camera.DestinationType.FILE_URL};
+	navigator.camera.getPicture(onCameraSuccess, onError, options);
 	
+	function onError(message) {
+	alert (message);	
+	}
+	
+	function onCameraSuccess(imageURL) {
+		$('#image').attr('src', imageURL);
+		$('#image').css('display', 'block');
+	}
+	
+});
+  
+		//sending of account variables
+	$('#formAccount form').submit(function(){
+			$('#message').load('http://douychi.com/services/account_server.php', {'name': $('#name').val(), 'email': $('#email').val(), 'pwd': $('#pwd').val(), 'pwd1': $('#pwd1').val(), 'phone': $('#phone').val(), 'address': $('#address').val(), 'image': $('#image').attr('src')});            
+   return false;
+		});
+		
+		document.addEventListener("backbutton", onBackKeyDown, false);
+});
+/////////////////////////////end  of create account	
+
 $('#bar').live('pageshow', function(event) {
 	detailpage = false;
 	sellerpage = false;
@@ -508,8 +535,7 @@ function onDeviceReady() {
 				
 				
 	////////======================================camera============================/////////			
-		pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
+		
 		
 	////////======================================camera============================/////////
     }
